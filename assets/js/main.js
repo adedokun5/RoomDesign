@@ -1,7 +1,7 @@
 //Author of Script : Adedokun julius Ayobami
 //Email : adedokunjuliusayobami@gmail.com 
 //Date_Created : 03 Nov 2022
-//Date_Modified : 10 Nov 2022
+//Date_Modified : 16 Dec 2022
 
 window.onscroll = function () {
 	navigation();
@@ -9,7 +9,7 @@ window.onscroll = function () {
 
 function navigation() 
 {
-	var document_height = document.documentElement.scrollTop;
+	let document_height = document.documentElement.scrollTop;
 	if ( document_height > 51 ) 
 	{
 		document.getElementById('nav').style.display = 'none';
@@ -20,9 +20,9 @@ function navigation()
 	}
 }
 
-var img_arr = [ 'desktop-image-hero-1.jpg', 'desktop-image-hero-2.jpg', 'desktop-image-hero-3.jpg' ];
+let img_arr = [ 'desktop-image-hero-1.jpg', 'desktop-image-hero-2.jpg', 'desktop-image-hero-3.jpg' ];
 
-var services_arr = [
+let services_arr = [
 	[ 
 		'Discover innovative<br class="small-screen-none"> ways to decorate',
  		'We provide unmatched quality, comfort, and style for property <br class="small-screen-none"> owners across the country. Our experts combine form and <br class="small-screen-none"> function in bringing your vision to life. Createa room in your <br class="small-screen-none"> own style with our collection and make your property a <br class="small-screen-none"> reflection of you and what you love.' 
@@ -39,27 +39,32 @@ var services_arr = [
 	] 
 ];
 
-var index = 0;
-var img_arr_length = img_arr.length - 1;
+let index = 0;
+let img_arr_length = img_arr.length - 1;
 
 function previousBtn() 
 {
-	if( index != 0 )
+	if ( index == 0) 
 	{
-		index--;
-		document.getElementById('slider_image').src="assets/images/"+img_arr[ index ];
-		document.getElementById('title').innerHTML = services_arr[ index ][ 0 ];
-		document.getElementById('details').innerHTML = services_arr[ index ][ 1 ];
+		index = img_arr.length;
 	}
+
+	index--;
+	document.getElementById('slider_image').src="assets/images/"+img_arr[ index ];
+	document.getElementById('title').innerHTML = services_arr[ index ][ 0 ];
+	document.getElementById('details').innerHTML = services_arr[ index ][ 1 ];	
 }
 
 function nextBtn() 
 {
-	if( index != img_arr_length )
-	{	
-		index++;
-		document.getElementById('slider_image').src="assets/images/"+img_arr[ index ];
-		document.getElementById('title').innerHTML = services_arr[ index ][ 0 ];
-		document.getElementById('details').innerHTML = services_arr[ index ][ 1 ];
+	if( index == 2 )
+	{
+		index = -1;
 	}
+
+	index++;
+	document.getElementById('slider_image').src="assets/images/"+img_arr[ index ];
+	document.getElementById('title').innerHTML = services_arr[ index ][ 0 ];
+	document.getElementById('details').innerHTML = services_arr[ index ][ 1 ];
+
 }
