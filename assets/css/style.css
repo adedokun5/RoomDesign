@@ -104,7 +104,7 @@ a{
 	.navigation{
 		position: fixed;
 		width: 100%;
-		top: 7px;
+		top: 8px;
 		left: -4%;
 	}
 
@@ -154,6 +154,22 @@ a{
 		font-size: 40px;
 	}
 }
+
+@media screen and ( max-width: 799px ){
+	.arrow-bg{
+		position: relative;
+		width: 20%;
+		top: -100%;
+		left: 80%;
+	}
+}
+
+@media screen and ( min-width: 680px ){
+	.arrow-bg{
+		left: 80%;
+	}
+}
+
 
 @media screen and ( min-width: 800px ){
 
@@ -212,8 +228,14 @@ a{
 	}
 
 	.image-div{
-		width: 32%;
+		width: 33%;
 		height: 331px;
+	}
+
+	.arrow-bg{
+		position: relative;
+		bottom: 0%;
+		left: 0%;
 	}
 }
 
@@ -242,7 +264,7 @@ a{
 	}
 
 	.image-div{
-		width: 31%;
+		width: 31.5%;
 		height: 321px;
 	}
 }
